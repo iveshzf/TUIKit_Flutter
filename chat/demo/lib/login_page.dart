@@ -75,7 +75,7 @@ class LoginInfoState extends ChangeNotifier {
   }
 
   Future<bool> logout() async {
-    if (CallParticipantStore.shared.state.selfInfo.value.status == CallParticipantStatus.accept) {
+    if (CallStore.shared.state.selfInfo.value.status == CallParticipantStatus.accept) {
       await CallStore.shared.hangup();
     }
     final result = await LoginStore.shared.logout();
